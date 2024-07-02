@@ -7,3 +7,6 @@
 - FE: React + WebRTC API's
 - BE: Signalling Server, Nodejs
 - DB: Not needed
+
+Backend Logic: 
+![alt text](image.png)
