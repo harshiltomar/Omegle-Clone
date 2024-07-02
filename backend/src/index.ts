@@ -11,7 +11,7 @@ const io = new Server(server);
 
 io.on('connection', (socket: Socket) => {
     console.log('A user is connected');
-})
+});
 
 server.listen(PORT, ()=> {
     console.log(`Listening at PORT: ${PORT}`)
