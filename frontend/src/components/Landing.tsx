@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Landing = () => {
@@ -7,7 +7,7 @@ const Landing = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-purple-500">
       <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold mb-4">Welcome to Omegle Clone</h1>
+        <h1 className="text-3xl font-bold mb-4">Welcome to Steamify</h1>
         <p className="mb-4">
           Connect with random strangers and have engaging conversations.
         </p>
@@ -29,8 +29,8 @@ const Landing = () => {
       <div className="mt-8">
         <p>
           Powered by{' '}
-          <a
-            className="text-blue-500 hover:underline"
+          <a href='github.com/harshiltomar'
+            className="text-white hover:underline"
           >
             Harshil ™️
           </a>
