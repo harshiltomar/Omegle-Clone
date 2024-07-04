@@ -20,6 +20,7 @@ io.on('connection', (socket: Socket) => {
     console.log('A user is connected');
     userManager.addUser("user", socket);
     socket.on("disconnect", ()=> {
+        console.log("user disconnected");
         userManager.removeUser(socket.id);
     })
 });
@@ -27,3 +28,5 @@ io.on('connection', (socket: Socket) => {
 server.listen(PORT, ()=> {
     console.log(`Listening at PORT: ${PORT}`)
 });
+
+//1:19:45
