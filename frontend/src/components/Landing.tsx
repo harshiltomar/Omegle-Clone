@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
   const [name, setName] = useState('');
+  const [joined, setJoined]= useState(false);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-black">
       <div className="bg-neutral-900 p-8 rounded-lg shadow-lg text-white w-1/2">
-        <h1 className="mx-24 text-3xl font-thin mb-4 flex">👋 Welcome to{" "} <h1 className='font-semibold ml-2 text-teal-500'>Steamify !</h1></h1>
+        <h1 className="mx-20 text-3xl font-thin mb-4 flex">👋 Welcome to{" "} <h1 className='font-semibold ml-2 text-teal-500'>Steamify !</h1></h1>
         <p className="mb-4 font-thin mx-10">
           We are working hard to get Codershouse ready for everyone!
           While we wrap up the finishing youches, we are adding people gradually to make sure nothing breaks

@@ -41,6 +41,9 @@ export class UserManager {
             return;
         }
 
+        console.log(this.users);
+        console.log(this.queue);
+
         const id1 = this.queue.pop();
         const id2 = this.queue.pop();
         console.log("id is " + id1 + " " + id2);
@@ -58,9 +61,11 @@ export class UserManager {
 
     initHandlers(socket: Socket) {
         socket.on("offer", ({sdp, roomId}: {sdp: string, roomId: string}) => {
+            console.log("Offer Recieved");
             this.roomManager.onOffer(roomId, sdp);
         })
         socket.on("answer",({sdp, roomId}: {sdp: string, roomId: string}) => {
+            console.log("Answer Recieved");
             this.roomManager.onAnswer(roomId, sdp);
         })
     }

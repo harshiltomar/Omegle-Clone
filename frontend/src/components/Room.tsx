@@ -5,19 +5,17 @@ import { Socket, io } from 'socket.io-client';
 const URL= "http://localhost:3000";
 
 const Room = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const name = searchParams.get('name');
+  const [lobby, setLobby] = useState<boolean>(true);
   const [socket, setSocket] = useState<null | Socket>(null);
-  const [lobby, setLobby] = useState<boolean>(false);
-  // const [connected, setConnected] = useState(false);
 
   useEffect(() => {
-    // logic to init user to the room
     const socket = io(URL);
-    setSocket(socket);
 
     socket.on("send-offer", ({roomId})=> {
       alert("send offer please");
+      setLobby(false);
       socket.emit("offer", {
         roomId,
         sdp: "",
@@ -31,16 +29,19 @@ const Room = () => {
         roomId,
         sdp: "",
       })
-    })
+    });
 
     //@ts-ignore
     socket.on("answer", ({roomId, offer})=> {
       alert("connection done");
-    })
+      setLobby(false);
+    });
 
     socket.on("lobby", ()=> {
       setLobby(true);
-    })
+    });
+
+    setSocket(socket);
   }, [name]);
 
   return (
